@@ -1,10 +1,20 @@
-const login = require("facebook-chat-api");
-const fs = require("fs");
-
-const appState = JSON.parse(fs.readFileSync("appstate.json", "utf8"));
-
-login({ appState }, (err, api) => {
-  if (err) return console.error(err);
-  console.log("Logged in!");
-  // Now you can use api.sendMessage(), api.listen(), etc.
-});
+[
+  {
+    "key": "c_user",
+    "value": "61564699374745",
+    "domain": "facebook.com",
+    "path": "/",
+    "expires": null,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "key": "xs",
+    "value": "48%3A__US-gFmAZ8vrw%3A2%3A1746898559%3A-1%3A9804",
+    "domain": "facebook.com",
+    "path": "/",
+    "expires": null,
+    "httpOnly": false,
+    "secure": false
+  }
+]
