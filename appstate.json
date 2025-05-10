@@ -1,94 +1,10 @@
-[
-  {
-    "key": "dbln",
-    "value": "%7B%2261564699374745%22%3A%22iYnqlgXw%22%7D",
-    "domain": "facebook.com",
-    "path": "/login/device-based/",
-    "expires": null,
-    "httpOnly": false,
-    "secure": false
-  },
-  {
-    "key": "datr",
-    "value": "gagIaBIq7nw3wMGzzXuC2w97",
-    "domain": "facebook.com",
-    "path": "/",
-    "expires": null,
-    "httpOnly": false,
-    "secure": false
-  },
-  {
-    "key": "sb",
-    "value": "RcMJaID8A0jNsXSO3Sfyue4k",
-    "domain": "facebook.com",
-    "path": "/",
-    "expires": null,
-    "httpOnly": false,
-    "secure": false
-  },
-  {
-    "key": "ps_l",
-    "value": "1",
-    "domain": "facebook.com",
-    "path": "/",
-    "expires": null,
-    "httpOnly": false,
-    "secure": false
-  },
-  {
-    "key": "ps_n",
-    "value": "1",
-    "domain": "facebook.com",
-    "path": "/",
-    "expires": null,
-    "httpOnly": false,
-    "secure": false
-  },
-  {
-    "key": "dpr",
-    "value": "2",
-    "domain": "facebook.com",
-    "path": "/",
-    "expires": null,
-    "httpOnly": false,
-    "secure": false
-  },
-  {
-    "key": "locale",
-    "value": "en_GB",
-    "domain": "facebook.com",
-    "path": "/",
-    "expires": null,
-    "httpOnly": false,
-    "secure": false
-  },
-  {
-    "key": "wd",
-    "value": "1280x578",
-    "domain": "facebook.com",
-    "path": "/",
-    "expires": null,
-    "httpOnly": false,
-    "secure": false
-  },
-  {
-    "key": "c_user",
-    "value": "61564699374745",
-    "domain": "facebook.com",
-    "path": "/",
-    "expires": null,
-    "httpOnly": false,
-    "secure": false
-  },
-  {
-    "key": "xs",
-    "value": "48%3A__US-gFmAZ8vrw%3A2%3A1746898559%3A-1%3A9804",
-    "domain": "facebook.com",
-    "path": "/",
-    "expires": null,
-    "httpOnly": false,
-    "secure": false
-  },
-  {
-    "key": "fr",
-    "value": "0yjAqCPG51eu9z9U7.AWdMDiCodiz3SMRgx5FH_kCdDYY3eYhxtj8uelClkCIw2gDy72A.BoH4CZ..AAA.0.0.BoH46A.AWdsaZ7PSZLVgyG38Rdkqm_D
+const login = require("facebook-chat-api");
+const fs = require("fs");
+
+const appState = JSON.parse(fs.readFileSync("appstate.json", "utf8"));
+
+login({ appState }, (err, api) => {
+  if (err) return console.error(err);
+  console.log("Logged in!");
+  // Now you can use api.sendMessage(), api.listen(), etc.
+});
